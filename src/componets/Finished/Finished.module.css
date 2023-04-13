@@ -1,0 +1,36 @@
+.finished {
+  padding: 10px;
+  margin-top: 20px;
+  width: 600px;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.result {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: white;
+  width: 600px;
+}
+
+.finished ul li p {
+  width: 100%;
+}
+.finished ul li {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  margin-bottom: 4px;
+  color: white;
+  border-bottom: 1px dotted white;
+}
+.finishedIcon{
+    font-size: 16px;
+}
+
+.finished button {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
