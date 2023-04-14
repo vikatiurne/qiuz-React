@@ -1,0 +1,29 @@
+.button{
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 10px 10px 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+}
+.button:active{
+box-shadow: inset 2px 2px 1px rgba(0, 0, 0, .3)
+}
+.button:disabled{
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.success{
+  background: rgba(161, 240, 69, 1);
+}
+.error{
+  background: rgba(240, 87, 108, 1);
+}
+.primary{
+    background-color: #2884f8;
+    color: white;
+}

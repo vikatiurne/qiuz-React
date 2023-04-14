@@ -12,6 +12,9 @@
   color: white;
   width: 600px;
 }
+.errorAnswer{
+  color:rgb(161, 161, 161)
+}
 
 .finished ul li p {
   width: 100%;
@@ -24,13 +27,13 @@
   color: white;
   border-bottom: 1px dotted white;
 }
-.finishedIcon{
+.checkIcon,
+.crossIcon{
     font-size: 16px;
 }
-
-.finished button {
-  padding: 10px;
-  margin-top: 20px;
-  border-radius: 5px;
-  cursor: pointer;
+.checkIcon{color: lightgreen;}
+.crossIcon{
+    color: red;
 }
+
+

@@ -45,7 +45,7 @@ const Quiz = () => {
   const [answerState, setAnswerState] = useState(null);
   const [finished, setFinished] = useState(false);
   const [qtyRightAnswers, setQtyRightAnswers] = useState(0);
-//   const [result, setResult] = useState({});
+  const [repeat, setRepeat] = useState(true);
 
   const onAnswerClickHandel = (id) => {
     // проверка стиля для ответа
@@ -60,10 +60,11 @@ const Quiz = () => {
       setAnswerState({ [id]: 'success' });
       //   счетчик правильных ответов
       setQtyRightAnswers(qtyRightAnswers + 1);
-      const uppdateQuiz=[...quiz]
-      uppdateQuiz[numQuestion].result = 'success'
-      setQuiz(uppdateQuiz)
-    //   setResult({ [id]: 'success' });
+      const uppdateQuiz = [...quiz];
+      uppdateQuiz[numQuestion].result = 'success';
+      const userAnswer = quiz[numQuestion].answers[id - 1].text;
+      uppdateQuiz[numQuestion].userAnswer = userAnswer;
+      setQuiz(uppdateQuiz);
       //  переход к след вопросу
       setNextQuestion();
 
@@ -71,13 +72,21 @@ const Quiz = () => {
     } else {
       // добавление стиля неправильному ответу
       setAnswerState({ [id]: 'error' });
-      const uppdateQuiz=[...quiz]
-      uppdateQuiz[numQuestion].result = 'wtfk'
-      setQuiz(uppdateQuiz)
+      const uppdateQuiz = [...quiz];
+      uppdateQuiz[numQuestion].result = 'error';
+      const userAnswer = quiz[numQuestion].answers[id - 1].text;
+      uppdateQuiz[numQuestion].userAnswer = userAnswer;
+      setQuiz(uppdateQuiz);
+
       //   переход к след вопросу
       setNextQuestion();
-      console.log('не правильно');
     }
+  };
+
+  const onRepeatHandler = () => {
+    setRepeat(repeat);
+    setFinished(false);
+    setQtyRightAnswers(0);
   };
 
   function isQuizFinished() {
@@ -102,7 +111,7 @@ const Quiz = () => {
     <div className={styles.quiz}>
       <div className="quizWrapper">
         <h1>Quiz Title</h1>
-        {!finished ? (
+        {!finished && repeat ? (
           <ActiveQuiz
             onAnswerClick={onAnswerClickHandel}
             answers={quiz[numQuestion].answers}
@@ -113,6 +122,7 @@ const Quiz = () => {
           />
         ) : (
           <Finished
+            onclick={onRepeatHandler}
             quiz={quiz}
             qtyRightAnswers={qtyRightAnswers}
           />
