@@ -1,0 +1,22 @@
+.drawer{
+    position: fixed;
+    z-index: 200;
+    top:0;
+    left: 0;
+    background-color: #fff;
+    height: 100%;
+    max-width: calc(100px + 15vw);
+    width: 100%;
+    transition: all 0.3s ease-in;
+}
+.close{
+    transform: translateX(calc(-100px - 15vw));
+}
+.drawer ul{
+    padding: 1.87em 0.62em;
+}
+.drawer ul li{
+    cursor: pointer;
+    font-size: 1.25em;
+   margin-bottom: 1em;
+}

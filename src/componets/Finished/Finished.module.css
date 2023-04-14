@@ -1,7 +1,8 @@
 .finished {
   padding: 10px;
-  margin-top: 20px;
-  width: 600px;
+  margin: 20px auto;
+  max-width: 600px;
+  width: 100%;
   border: 2px solid white;
   border-radius: 10px;
 }
@@ -10,10 +11,16 @@
   margin-bottom: 20px;
   font-size: 24px;
   color: white;
-  width: 600px;
 }
-.errorAnswer{
-  color:rgb(161, 161, 161)
+.result span {
+  font-size: 20px;
+  color: #ccc;
+}
+.errorAnswer {
+  color: rgb(161, 161, 161);
+}
+.finished ul {
+  margin-bottom: 15px;
 }
 
 .finished ul li p {
@@ -28,12 +35,12 @@
   border-bottom: 1px dotted white;
 }
 .checkIcon,
-.crossIcon{
-    font-size: 16px;
+.crossIcon {
+  font-size: 16px;
 }
-.checkIcon{color: lightgreen;}
-.crossIcon{
-    color: red;
+.checkIcon {
+  color: lightgreen;
 }
-
-
+.crossIcon {
+  color: red;
+}

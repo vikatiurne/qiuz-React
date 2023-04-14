@@ -1,9 +1,20 @@
+import { useState } from 'react';
+import MenuToggle from '../../componets/Navigation/MenuToggle';
+import Drawer from '../../componets/Navigation/Drawer/Drawer';
 import styles from './Layout.module.css';
 
-const Layout = (props) => {
+const Layout = ({ children}) => {
+  const [isOpen, setIsOpen] = useState(true);
+ 
+  const onClickMenuHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className={styles.layout}>
-      <main>{props.children}</main>
+      <Drawer isOpen={isOpen} onClose={() => setIsOpen(true)} />
+      <MenuToggle isOpen={isOpen} onToggle={onClickMenuHandler} />
+      <main>{children}</main>
     </div>
   );
 };

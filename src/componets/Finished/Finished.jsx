@@ -7,8 +7,8 @@ const Finished = (props) => {
   return (
     <div className={styles.finished}>
       <p className={styles.result}>
-        Правильно {qtyRightAnswers} з {quiz.length} (
-        {((qtyRightAnswers / quiz.length) * 100).toFixed(2)}%)
+        Правильно {qtyRightAnswers} з {quiz.length} <span>(
+        {((qtyRightAnswers / quiz.length) * 100).toFixed(2)}%)</span>
       </p>
       <ul>
         {quiz.map((item) => {

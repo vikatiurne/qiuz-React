@@ -1,11 +1,10 @@
 .quiz{
-    padding: 100px;
-    display: flex;
+    padding: 100px 20px 100px;
     flex-grow: 1;
-    justify-content: center;
     width: 100%;
-    background: linear-gradient(90deg, #5041b2, 0%, #7969e6 100%);
+    
 }
 .quiz h1{
+    text-align: center;
     color: white;
 }
