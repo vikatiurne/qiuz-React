@@ -1,14 +1,16 @@
 import { FiCheck, FiX } from 'react-icons/fi';
 import Button from '../UI/Button/Button';
 import styles from './Finished.module.css';
+import { Link } from 'react-router-dom';
 
 const Finished = (props) => {
   const { quiz, qtyRightAnswers, onclick } = props;
+
   return (
     <div className={styles.finished}>
       <p className={styles.result}>
-        Правильно {qtyRightAnswers} з {quiz.length} <span>(
-        {((qtyRightAnswers / quiz.length) * 100).toFixed(2)}%)</span>
+        Правильно {qtyRightAnswers} з {quiz.length}{' '}
+        <span>({((qtyRightAnswers / quiz.length) * 100).toFixed(2)}%)</span>
       </p>
       <ul>
         {quiz.map((item) => {
@@ -32,8 +34,12 @@ const Finished = (props) => {
         })}
       </ul>
 
-      <Button onclick={onclick} type="primary">Повторити</Button>
-      <Button  type="success">Перейти до списку тестів</Button>
+      <Button onclick={onclick} type="primary">
+        Повторити
+      </Button>
+      <Link to='..'>
+        <Button type="success">Перейти до списку тестів</Button>
+      </Link>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import AnswerItem from './AnswerItem/AnswerItem';
 import styles from './AnswersList.module.css';
 
 const AnswersList = ({ answers, onAnswerClick, styleAnswer }) => {
+
   return (
     <ul className={styles.answersList}>
       {answers.map((answer) => {
