@@ -2,7 +2,7 @@
     width: 100vw;
     height: 100vh;
     text-align: center;
-    background: linear-gradient(90deg, #7000FF 0%, #4e31b5 37%, #8463d2 100%);
+    background: linear-gradient(270deg, #cef2fa 0%, #59bfef 100%);
 }
 .quizList ul{
     padding-top: 1.2em;
@@ -11,13 +11,13 @@
 }
 .quizList div h1{
     padding-top: 1.2em;
-    color: white;
+    color: #290c4f;
 }
 .quizList ul li{
     margin-bottom: 0.6em;
 }
 .quizList ul li a{
-    color: white;
+    color: #290c4f;
     font-size: 1.2em;
     text-decoration: none;
 }

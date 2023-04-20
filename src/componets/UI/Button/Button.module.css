@@ -1,4 +1,5 @@
 .button {
+  color: white;
   display: inline-block;
   padding: 8px 16px;
   margin: 15px 10px 0 0;
@@ -9,6 +10,9 @@
   font-weight: bold;
   font-size: 12px;
   transition: transform 0.22s ease;
+}
+.button:last-child{
+  margin-right: 0;
 }
 .button:active {
   box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.3);
@@ -22,7 +26,7 @@
 }
 
 .success {
-  background: rgba(161, 240, 69, 1);
+  background: rgb(132, 199, 56);
 }
 .error {
   background: rgba(240, 87, 108, 1);
