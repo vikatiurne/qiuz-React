@@ -74,10 +74,10 @@ const Auth = () => {
           className={eye ? styles.hide : styles.visible}
         />
         <div className={styles.authActive}>
-          <Button type="success" valid={inputPass.trim().length >= 8}>
+          <Button type="success" valid={inputPass.trim().length >= 8 && inputName.trim().length >= 8} title='Увійти'>
             Вхід
           </Button>
-          <Button onclick={authHandler} type="primary" valid={true} title=''>
+          <Button onclick={authHandler} type="primary" valid={true} title="Для реєстрації введіть ім'я та пароль">
             Реєстрація
           </Button>
         </div>

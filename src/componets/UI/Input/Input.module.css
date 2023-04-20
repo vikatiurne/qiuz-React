@@ -3,8 +3,6 @@
   flex-direction: column;
 }
 .input input {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   border: 1px solid transparent;
   box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.2);

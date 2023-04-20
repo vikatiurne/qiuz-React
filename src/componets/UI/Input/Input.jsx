@@ -3,6 +3,7 @@ import styles from './Input.module.css';
 
 const Input = (props) => {
   const {
+    // className,
     inputLabel,
     inputType,
     onChangeInput,
