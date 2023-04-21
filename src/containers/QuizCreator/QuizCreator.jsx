@@ -4,6 +4,7 @@ import styles from './QuizCreator.module.css';
 import Button from '../../componets/UI/Button/Button';
 import Input from '../../componets/UI/Input/Input';
 import Select from '../../componets/UI/Select/Select';
+import axios from '../../axios/axios-quiz';
 
 const QuizCreator = () => {
   // const [quizTitle, setQuizTitle] = useState('');
@@ -21,7 +22,8 @@ const QuizCreator = () => {
     option2: option2.trim().length > 0,
     option3: option3.trim().length > 0,
     option4: option4.trim().length > 0,
-    select: rightAnswer!=='відповідь'
+    select: rightAnswer !== 'відповідь',
+    createButton: quiz.length !== 0,
   };
 
   const handlerInputUserQuestion = (e) => {
@@ -68,9 +70,28 @@ const QuizCreator = () => {
     setRightAnswer('відповідь');
   };
 
-  const createQuizHandler = (e) => {
+  const createQuizHandler = async (e) => {
     e.preventDefault();
-    console.log(quiz);
+    // первый способ (лучше т.к. используется async)
+    try {
+      await axios.post('/quizes.json', quiz);
+
+      setQuiz([]);
+      setOption1('');
+      setOption2('');
+      setOption3('');
+      setOption4('');
+      setUserQuestion('');
+      setRightAnswer('відповідь');
+    } catch (error) {
+      console.log(error);
+    }
+
+    // второй способ без async
+    // axios.post('https://quiz-tiurne-default-rtdb.firebaseio.com/quizes.json', quiz)
+    // .then(response=>{console.log(response)})
+    // .catch(error=>console.log(error))
+    // console.log(quiz);
   };
   return (
     <div className={styles.quizCreator}>
@@ -89,7 +110,7 @@ const QuizCreator = () => {
           onChangeInput={handlerInputUserQuestion}
           placeholder="Питання"
           value={userQuestion}
-          inputLabel={`Питання ${quiz.length+1}`}
+          inputLabel="Питання"
           valid={validInputs.question}
           tached={true}
         />
@@ -158,9 +179,13 @@ const QuizCreator = () => {
               validInputs.question
             }
           >
-            {!quiz.length?'Додати питання':'Додати ще питання'}
+            {!quiz.length ? 'Додати питання' : 'Додати ще питання'}
           </Button>
-          <Button onclick={createQuizHandler} type="success" valid={true}>
+          <Button
+            onclick={createQuizHandler}
+            type="success"
+            valid={validInputs.createButton}
+          >
             Зберегти тест
           </Button>
         </div>

@@ -34,11 +34,11 @@ const Finished = (props) => {
         })}
       </ul>
 
-      <Button onclick={onclick} type="primary">
+      <Button onclick={onclick} type="primary" valid={true}>
         Повторити
       </Button>
       <Link to='..'>
-        <Button type="success">Перейти до списку тестів</Button>
+        <Button type="success" valid={true}>Перейти до списку тестів</Button>
       </Link>
     </div>
   );

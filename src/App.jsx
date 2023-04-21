@@ -10,12 +10,11 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" index element={<QuizList />} />
+          <Route path="/" element={<QuizList />}></Route>
           <Route path="auth" element={<Auth />} />
           <Route path="quiz-creator" element={<QuizCreator />} />
           <Route path="quiz/:id" element={<Quiz />} />
         </Routes>
-        {/* <Quiz /> */}
       </Layout>
     </BrowserRouter>
   );
